@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://f3nt8tgw54cj"]
+
+[ext_resource type="PackedScene" uid="uid://wh0tsdvbsxg8" path="res://player1.tscn" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b3i8ds1ehi08u" path="res://fertile-soil-background.webp" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bd16u3d5by4c" path="res://player2.tscn" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://b00tj4jgnvwp7" path="res://gettyimages-1027892740-612x612.jpg" id="4_1bvp3"]
+
+[node name="Main" type="Node"]
+
+[node name="leftcontainer" type="SubViewportContainer" parent="."]
+offset_right = 702.0
+offset_bottom = 700.0
+
+[node name="leftviewport" type="SubViewport" parent="leftcontainer"]
+handle_input_locally = false
+size = Vector2i(700, 700)
+size_2d_override = Vector2i(600, 600)
+render_target_update_mode = 4
+
+[node name="Player1" parent="leftcontainer/leftviewport" instance=ExtResource("1_0xm2m")]
+
+[node name="Camera2D" type="Camera2D" parent="leftcontainer/leftviewport/Player1"]
+
+[node name="TextureRect" type="TextureRect" parent="leftcontainer/leftviewport"]
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 614.0
+offset_bottom = 657.0
+texture = ExtResource("2_1bvp3")
+
+[node name="rightcontainer" type="SubViewportContainer" parent="."]
+offset_left = 515.0
+offset_top = 3.0
+offset_right = 1215.0
+offset_bottom = 803.0
+
+[node name="rightviewport" type="SubViewport" parent="rightcontainer"]
+handle_input_locally = false
+size = Vector2i(700, 700)
+render_target_update_mode = 4
+
+[node name="Player2" parent="rightcontainer/rightviewport" instance=ExtResource("2_h2yge")]
+
+[node name="Camera2D" type="Camera2D" parent="rightcontainer/rightviewport/Player2"]
+
+[node name="TextureRect" type="TextureRect" parent="rightcontainer/rightviewport"]
+offset_left = 104.0
+offset_top = -5.0
+offset_right = 747.0
+offset_bottom = 640.0
+texture = ExtResource("4_1bvp3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0.1, 0)
+offset_left = 514.0
+offset_top = 1.0
+offset_right = 637.0
+offset_bottom = 650.0

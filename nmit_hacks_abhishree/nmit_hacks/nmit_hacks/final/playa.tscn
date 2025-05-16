@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc7ygpv0xkswf"]
+
+[ext_resource type="Script" uid="uid://dkhmcttbq5sm2" path="res://playa.gd" id="1_ujt85"]
+[ext_resource type="Texture2D" uid="uid://ddgyjh2r2scqc" path="res://Brown.png" id="2_jb1h4"]
+
+[node name="playa" type="CharacterBody2D"]
+script = ExtResource("1_ujt85")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(31, 31)
+texture = ExtResource("2_jb1h4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
