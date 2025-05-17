@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccl6osqjbw356"]
+
+[ext_resource type="Texture2D" uid="uid://cf2asgdugd4tc" path="res://PlayerSpriteSheet.png" id="1_f50pn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
+size = Vector2(15, 20)
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(201, 125)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_f50pn")
+hframes = 48
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ij6vw")
